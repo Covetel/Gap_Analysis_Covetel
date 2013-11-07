@@ -1,6 +1,8 @@
 How to install:
 ===============
 
+0. Make sure you have python-setuptools installed
+
 1. Move to the aeroolib folder and execute:
 
     sudo python setup.py install
