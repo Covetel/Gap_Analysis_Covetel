@@ -32,7 +32,7 @@ This module provides the necessary tools to generate a new project with all the 
     'author': 'Elico Corp',
     'website': 'http://www.elico-corp.com',
     'images': [],
-    'depends': ['itps'],
+    'depends': ['gap_analysis'],
     'init_xml': [],
     'update_xml': [
         'gap_analysis_project.xml',
