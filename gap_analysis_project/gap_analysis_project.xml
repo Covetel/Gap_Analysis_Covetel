@@ -5,7 +5,7 @@
             <field name="name">itps.project.form</field>
             <field name="model">gap_analysis</field>
             <field name="type">form</field>
-            <field name="inherit_id" ref="itps.view_gap_analysis_form"/>
+            <field name="inherit_id" ref="gap_analysis.view_gap_analysis_form"/>
              <field name="priority" eval="9"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='functionality']" position="after">
@@ -46,6 +46,7 @@
             	<xpath expr="//field[@name='remaining_hours']" position="after">
             		<field name="child_remaining_hours" readonly="1" attrs="{'invisible':[('child_planned_hours','=',0)]}"/>
                 </xpath>
+<!--
                 <xpath expr="/form/notebook/page[@string='Extra Info']/separator[@string='Miscelleanous']" position="before">
                     <separator string="Gap Analysis" colspan="4"/>
                     <field name="gap_category_id" readonly="1"/>
@@ -55,6 +56,7 @@
                     <field name="module_id"/>
                     <field name="to_report" />
                 </xpath>
+-->
             </field>
         </record>
         <record id="view_task_search_form_gap" model="ir.ui.view">
@@ -116,6 +118,6 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem id="menu_gap_024" name="Modules" parent="itps.menu_gap_02" sequence="12" action="act_gap_analysis_modules" />
+        <menuitem id="menu_gap_024" name="Modules" parent="gap_analysis.menu_gap_02" sequence="12" action="act_gap_analysis_modules" />
     </data>
 </openerp>
