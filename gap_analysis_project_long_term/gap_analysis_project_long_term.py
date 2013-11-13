@@ -37,7 +37,8 @@ class gap_analysis(osv.osv):
         phase_pool   = self.pool.get('project.phase')
         gapline_pool = self.pool.get('gap_analysis.line')
         task_pool    = self.pool.get('project.task')
-        uom_hour     = self.pool.get('product.uom').search(cr, uid, [('name', '=', _('Hour'))], context=context)[0]
+        uom_hour     = self.pool.get('product.uom').search(cr, uid, [('name', '=', _('Hour'))], context=context)
+	print "debug: uom_hour -> ",uom_hour
         
         for gap in self.browse(cr, uid, ids, context=context):
             partner_id = gap.partner_id and gap.partner_id.id or False
@@ -89,7 +90,7 @@ class gap_analysis(osv.osv):
                             'name':        gap.name + " - " + phase,
                             'project_id':  project_id,
                             'duration':    duration_hour,
-                            'product_uom': uom_hour,
+                            'product_uom': 1,
                             'previous_phase_ids': [],#TODO
                             'next_phase_ids': [],#TODO
                         }
